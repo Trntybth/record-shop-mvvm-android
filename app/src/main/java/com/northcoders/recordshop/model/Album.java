@@ -9,7 +9,7 @@ public class Album extends BaseObservable {
     private String id;
     @SerializedName("album_title")
     private String title;
-    @SerializedName("album_id")
+    @SerializedName("album_artist")
     private String artist;
     @SerializedName("album_release_year")
     private String releaseYear;
