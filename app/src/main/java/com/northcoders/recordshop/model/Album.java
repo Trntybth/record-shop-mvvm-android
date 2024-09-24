@@ -2,6 +2,7 @@ package com.northcoders.recordshop.model;
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
 import com.google.gson.annotations.SerializedName;
+import com.northcoders.recordshop.BR;
 
 public class Album extends BaseObservable {
     @SerializedName("album_id")
