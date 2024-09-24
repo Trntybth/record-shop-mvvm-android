@@ -48,6 +48,7 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.AlbumViewHol
     public void onBindViewHolder(@NonNull AlbumViewHolder holder, int position) {
         Album album = albumList.get(position);
         holder.albumItemBinding.setAlbum(album);
+        holder.albumItemBinding.executePendingBindings();
     }
 
 
