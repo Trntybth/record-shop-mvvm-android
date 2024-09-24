@@ -58,12 +58,14 @@ public class MainActivity extends AppCompatActivity {
 
     private void displayInRecyclerView(){
         recyclerView = activityMainBinding.recyclerView;
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(layoutManager);
+
         albumAdapter = new AlbumAdapter(albumList, this);
         recyclerView.setAdapter(albumAdapter);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setHasFixedSize(true);
-        albumAdapter.notifyDataSetChanged();
+
     }
 
 

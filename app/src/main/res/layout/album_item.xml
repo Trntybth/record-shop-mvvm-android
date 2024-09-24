@@ -8,59 +8,85 @@
             type="com.northcoders.recordshop.model.Album" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#95866F"
+        android:elevation="20dp"
+        app:cardCornerRadius="20dp">
 
-        <TextView
-            android:id="@+id/titleView"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="150dp"
-            android:text="@{album.title}"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="TITLE NAME" />
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/artistView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{album.artist}"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/titleView"
-            tools:text="ARTIST NAME" />
+            <TextView
+                android:id="@+id/titleView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="16dp"
+                android:gravity="left"
+                android:text="@{album.title}"
+                android:textColor="#EAE6E1"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="TITLE NAME" />
 
-        <TextView
-            android:id="@+id/releaseYearView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{album.releaseYear}"
-            app:layout_constraintStart_toStartOf="@id/artistView"
-            app:layout_constraintTop_toBottomOf="@id/artistView"
+            <TextView
+                android:id="@+id/artistView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
 
-            tools:text="RELEASE YEAR" />
+                android:text="@{`artist: ` + album.artist}"
+                android:textColor="#EAE6E1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.233"
 
-        <TextView
-            android:id="@+id/genreView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{album.genre}"
-            app:layout_constraintStart_toStartOf="@id/releaseYearView"
-            app:layout_constraintTop_toBottomOf="@id/releaseYearView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleView"
+                tools:text="ARTIST NAME" />
 
-            tools:text="GENRE" />
+            <TextView
+                android:id="@+id/releaseYearView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{`year of release: ` + Integer.toString(album.releaseYear)}"
 
-        <TextView
-            android:id="@+id/stockTrackView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{album.stockTracker}"
-            app:layout_constraintStart_toStartOf="@id/genreView"
-            app:layout_constraintTop_toBottomOf="@id/genreView"
 
-            tools:text="STOCK TRACKER" />
+                android:textColor="#EAE6E1"
+                app:layout_constraintStart_toStartOf="@id/artistView"
+                app:layout_constraintTop_toBottomOf="@id/artistView"
+                tools:text="RELEASE YEAR" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/genreView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="25dp"
+                android:text="@{`genre: ` + album.genre}"
+
+                android:textColor="#EAE6E1"
+                app:layout_constraintStart_toStartOf="@id/releaseYearView"
+                app:layout_constraintTop_toBottomOf="@id/releaseYearView"
+                tools:text="GENRE" />
+
+            <!--        <TextView-->
+            <!--            android:id="@+id/stockTrackView"-->
+            <!--            android:layout_width="wrap_content"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:text="@{album.stockTracker}"-->
+            <!--            app:layout_constraintStart_toStartOf="@id/genreView"-->
+            <!--            app:layout_constraintTop_toBottomOf="@id/genreView"-->
+
+            <!--            tools:text="STOCK TRACKER" />-->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 </layout>

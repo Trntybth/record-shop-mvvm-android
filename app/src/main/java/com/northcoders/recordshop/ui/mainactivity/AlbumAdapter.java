@@ -57,5 +57,4 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.AlbumViewHol
         return albumList.size();
     }
 
-
 }

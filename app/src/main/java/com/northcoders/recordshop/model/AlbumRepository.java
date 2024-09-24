@@ -30,7 +30,7 @@ public class AlbumRepository {
 
             @Override
             public void onFailure(Call<List<Album>> call, Throwable throwable) {
-                System.out.println("Failure: " + throwable.getMessage());
+                System.out.println("Error: " + throwable.getMessage());
             }
         });
         return mutableLiveData;
