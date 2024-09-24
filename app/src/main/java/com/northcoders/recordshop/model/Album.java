@@ -1,15 +1,32 @@
 package com.northcoders.recordshop.model;
-
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
+import com.google.gson.annotations.SerializedName;
 
 public class Album extends BaseObservable {
+    @SerializedName("album_id")
     private String id;
+    @SerializedName("album_title")
     private String title;
+    @SerializedName("album_id")
     private String artist;
+    @SerializedName("album_release_year")
     private String releaseYear;
+    @SerializedName("album_genre")
     private String genre;
+    @SerializedName("album_stock_tracker")
     private String stockTracker;
+
+    public Album(String id, String title, String artist, String releaseYear, String genre, String stockTracker) {
+        this.id = id;
+        this.title = title;
+        this.artist = artist;
+        this.releaseYear = releaseYear;
+        this.genre = genre;
+        this.stockTracker = stockTracker;
+    }
+
+    public Album() {}
 
     @Bindable
     public String getId() {
@@ -65,16 +82,5 @@ public class Album extends BaseObservable {
         this.stockTracker = stockTracker;
         notifyPropertyChanged(BR.stockTracker);
     }
-
-    public Album(String id, String title, String artist, String releaseYear, String genre, String stockTracker) {
-        this.id = id;
-        this.title = title;
-        this.artist = artist;
-        this.releaseYear = releaseYear;
-        this.genre = genre;
-        this.stockTracker = stockTracker;
-    }
-
-    public Album() {}
 
 }
